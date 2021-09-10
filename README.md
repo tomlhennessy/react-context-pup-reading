@@ -39,20 +39,17 @@ consumers. You'll also learn how to update a context's value.
 In this demo, you'll create a simple React app that uses Context to allow users
 to choose what puppy picture to render.
 
-Begin by cloning this starter React app with a folder of `pups` photos!
+Begin by cloning the starter React app with a folder of `pups` photos from the
+`Download` link at the bottom of this page.
 
-```sh
-git clone https://github.com/appacademy-starters/react-context-pups-starter.git
-```
-
-Start your application so you'll see a huge and super happy pup that's running!
-Take a minute to look at the `App` component in `src/App.js`. `App` is rendering
-the `PupForm` and `PupImage` components. In the `PupImage` component, the
-`speedy` pup image is rendered and is not set to change dynamically (yet). The
-`PupForm` renders a form that has a `select` dropdown that allows you to select
-the different pups. Selecting a pup and submitting this form doesn't do anything
-now, but with the help of context, will dynamically set the `PupImage`
-component's image.
+Run `npm install` and then start your application. You should see a huge and
+super happy pup running! Take a minute to look at the `App` component in
+`src/App.js`. `App` is rendering the `PupForm` and `PupImage` components. In the
+`PupImage` component, the `speedy` pup image is rendered and is not set to
+change dynamically (yet). The `PupForm` renders a form that has a `select`
+dropdown that allows you to select the different pups. Selecting a pup and
+submitting this form doesn't do anything now, but with the help of context, it
+will dynamically set the `PupImage` component's image.
 
 Being able to render a pup photo is great, but what about giving your users the
 chance to select a pup photo to render? Let's allow your users to select a pup
@@ -179,9 +176,9 @@ export function PupProvider(props) {
 }
 ```
 
-Note that you should set the `puppyType` as `speedy` instead of `"speedy"`
-(without quotations), or else you'd be setting a string to be the default state
-instead of a default pup photo to be rendered.
+Note that you should set the `puppyType` as `speedy` (without quotations)
+instead of `"speedy"`. Using the version in quotation marks would set the
+default state to a string instead of a default pup photo to be rendered.
 
 Remember that provider components expect to receive a `value` prop. The `value`
 prop will hold the context information that will be passed throughout the
@@ -207,17 +204,17 @@ let's create some context consumers!
 
 ## `useContext`
 
-`useContext` is a React hook that allows components to "consume" or read the
+`useContext` is a React hook that allows components to "consume", or read, the
 value of a given context. If you pass a context into the `useContext` hook, the
 hook will return the value of that context.
 
 Let's make `PupImage` consume your `PupContext` and render the image set in the
 context's value!
 
-Import `useContext` from React and the `PupContext` in the `PupImage` component
-file. Inside the `PupImage` component, invoke the `useContext` and pass in the
+Import `useContext` from React and `PupContext` from the `PupImage` component
+file. Inside the `PupImage` component, invoke `useContext` and pass in the
 `PupContext` as an argument. Destructure the `puppyType` key from the return
-value of the `useContext` function. Then, set the `src` attribute on the `img`
+value of the `useContext` function. Then set the `src` attribute on the `img`
 tag to that `puppyType` key.
 
 ```js
@@ -246,9 +243,9 @@ in the `PupProvider`!
 ## Update the context value
 
 Now, let's try changing the context value from a different component. The
-`PupForm` component is not a parent or a child of the `PupImage`, so the
-context value cannot be sent as `props`. Instead, you will "consume" or access
-the value of the `PupContext` using the same `useContext` hook in the `PupForm`.
+`PupForm` component is not a parent or a child of `PupImage`, so the context
+value cannot be sent as `props`. Instead, you will "consume", or access, the
+value of the `PupContext` using the same `useContext` hook in the `PupForm`.
 
 The `PupForm` will render a `select` dropdown that will update the
 `selectedPup` component state variable to the pup image selected by the user.
@@ -315,8 +312,8 @@ context changes. The flow of context will look something like this:
 * When the value of the provider component's state variable changes, the
   provider component will re-render and the context's value will change
 * The consumer components are subscribed to changes to the context value through
-  the `useContext` hook so they will re-render even though there is no `props`
-  or component state change.
+  the `useContext` hook so they will re-render even though there are no `props`
+  or component state changes.
 
 ## Create a context hook
 
@@ -325,8 +322,8 @@ will consume the `PupContext` and return the value of the `PupContext` when
 invoked.
 
 Inside the `src/context/PupContext.js` file, create and export a function called
-`usePuppyType`. Import the `useContext` hook from React. Return the
-invocation of `useContext` passing in the `PupContext` as an argument.
+`usePuppyType`. Import the `useContext` hook from React. Return the invocation
+of `useContext` passing in `PupContext` as an argument.
 
 ```js
 // ./src/context/PupContext.js
@@ -378,7 +375,7 @@ export default PupForm;
 
 Amazing! You just created your first React hook! To create a custom hook, you
 can use one or more of the existing React hooks. This particular hook that you
-created returns the value of the `PupContext`. And will cause the consumer
+created returns the value of the `PupContext` and will cause the consumer
 component to re-render because the hook is using `useContext` internally.
 
 ## What you learned
