@@ -211,7 +211,7 @@ hook will return the value of that context.
 Let's make `PupImage` consume your `PupContext` and render the image set in the
 context's value!
 
-Import `useContext` from React and `PupContext` from the `PupImage` component
+Import `useContext` from React and `PupContext` from the `PupContext` component
 file. Inside the `PupImage` component, invoke `useContext` and pass in the
 `PupContext` as an argument. Destructure the `puppyType` key from the return
 value of the `useContext` function. Then set the `src` attribute on the `img`
