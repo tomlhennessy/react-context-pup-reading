@@ -388,7 +388,7 @@ how to create your own React hook to consume the same context every time.
 
 [React Context]: https://reactjs.org/docs/context.html
 
-[React.createContext]: https://reactjs.org/docs/context.html#reactcreatecontext
+[React.createContext]: https://react.dev/learn/passing-data-deeply-with-context#step-1-create-the-context
 
 [Context.Provider]: https://reactjs.org/docs/context.html#contextprovider
 
